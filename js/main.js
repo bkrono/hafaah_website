@@ -52,10 +52,10 @@
      e.preventDefault();
      const target = document.querySelector(this.getAttribute('href'));
      if (target) {
-       target.scrollIntoView({
-         behavior: 'smooth',
-         block: 'start'
-       });
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
      }
    });
  });
@@ -82,6 +82,46 @@
    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
    observer.observe(card);
  });
+
+ // Animate VMV cards
+ document.querySelectorAll('.vmv-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(30px)';
+  card.style.transition = `all 0.6s ease ${index * 0.15}s`;
+  observer.observe(card);
+});
+
+// Animate team cards
+document.querySelectorAll('.team-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(30px)';
+  card.style.transition = `all 0.6s ease ${index * 0.15}s`;
+  observer.observe(card);
+});
+
+// Animate CSR cards
+document.querySelectorAll('.csr-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateX(-30px)';
+  card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+  observer.observe(card);
+});
+
+// Animate certification cards
+document.querySelectorAll('.cert-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.transform = 'scale(0.9)';
+  card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+  observer.observe(card);
+});
+
+// Animate timeline items
+document.querySelectorAll('.timeline-item').forEach((item, index) => {
+  item.style.opacity = '0';
+  item.style.transform = 'translateY(20px)';
+  item.style.transition = `all 0.6s ease ${index * 0.2}s`;
+  observer.observe(item);
+});
 
  // Observe feature items
  document.querySelectorAll('.feature-item').forEach((item, index) => {
@@ -130,3 +170,4 @@
      }
    }, 16);
  }
+
